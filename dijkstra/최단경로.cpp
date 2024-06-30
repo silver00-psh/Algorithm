@@ -15,7 +15,7 @@ void dijkstra(int start)
 
 	while (!pq.empty())
 	{
-		int dist = -pq.top().first;
+		int dist = -pq.top().first; // 2.여기서 원상복구
 		int now = pq.top().second;
 		pq.pop();
 
@@ -23,7 +23,7 @@ void dijkstra(int start)
 		
 		for (int i = 0; i < map[now].size(); i++)
 		{
-			int cost = dist + map[now][i].second; // 2.여기서 원상복구
+			int cost = dist + map[now][i].second; 
 			if (cost < d[map[now][i].first])
 			{
 				d[map[now][i].first] = cost;
